@@ -1,0 +1,40 @@
+https://drive.google.com/file/d/15nK1Qon66L8iJUEUW_BmUbn6ANb068SW/view?usp=sharing
+
+Server:
+
+A server is a powerful computer dedicated to running services and applications accessible over a network. 
+In this case, the server runs the entire website.
+
+Domain Name System (DNS):
+
+The user types "www.foobar.com [invalid URL removed]" in their browser. Their computer doesn't understand
+website names, so it contacts a DNS server (like a giant phonebook for the internet).
+
+DNS Record (www):
+
+The DNS server looks up the "www" record associated with "foobar.com." This record translates the user-friendly 	domain name "www.foobar.com [invalid URL removed]" into the server's IP address (8.8.8.8 in this example).
+
+Web Server (Nginx):
+
+The user's computer now has the server's IP address. It sends a request using the Hypertext Transfer Protocol 
+(HTTP) to the web server (Nginx) on the server.
+
+Application Server (LAMP Stack Issue):
+
+Here's a clarification: In a traditional LAMP stack, there's no separate application server. The web server (like Nginx) typically handles serving static files (like HTML, CSS, and images) and passes dynamic requests (involving databases or code execution) to a separate application like a PHP script handler (often built into the web server configuration).
+
+Application Files (Code Base):
+
+Nginx checks the request and, if it's for a static file, serves it directly. If it's a dynamic request, Nginx might pass it to a PHP script handler which would process the application code (your website's functionality) and potentially interact with the database.
+
+Database (MySQL):
+
+The application code might need to access information stored in a database (MySQL in this case). It would send queries to the database, retrieve data, and use it to generate the webpage content.
+
+Communication Protocol:
+
+The server uses the HTTP protocol to communicate with the user's computer. HTTP defines how information is exchanged between web servers and browsers.
+
+Single Point of Failure (SPOF): If the server fails, the website goes down.
+Downtime during Maintenance: Updates require restarting the server, causing downtime.
+Limited Scalability: It can't handle high traffic volumes.
