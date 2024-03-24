@@ -1,0 +1,22 @@
+https://drive.google.com/file/d/1zNZ0AjY7Q_KAYJWY8a6czWQRxxJy49Tm/view?usp=sharing
+
+Why Add Each Element:
+Web Server (Nginx): Handles incoming HTTP requests and serves static content efficiently.
+Application Server: Executes dynamic code, interacts with the database, and generates content.
+Load Balancer (HAproxy): Distributes incoming traffic across multiple application servers, improving performance and reliability.
+Database (MySQL): Stores and manages data for the website.
+Load Balancer Configuration:
+The load balancer (HAproxy) can be configured with a round-robin distribution algorithm, where it cycles through the list of available servers in sequence. This ensures that incoming requests are evenly distributed among the application servers.
+Active-Active vs. Active-Passive Setup:
+In an Active-Active setup, all servers are actively serving traffic simultaneously. In contrast, in an Active-Passive setup, one server actively serves traffic while the other remains on standby, only becoming active if the primary server fails.
+Database Primary-Replica Cluster:
+In a Primary-Replica (Master-Slave) cluster, the primary node (master) handles both read and write operations, while replica nodes (slaves) replicate data from the primary node and handle read operations. This setup provides redundancy and improves read scalability.
+Difference Between Primary and Replica Nodes:
+The primary node handles write operations and is the authoritative source of data. The replica nodes replicate data from the primary node and handle read operations. In terms of the application, the primary node is responsible for maintaining data integrity and consistency, while replica nodes primarily serve read requests, offloading the primary node and improving scalability.
+Issues with this Infrastructure:
+SPOF:
+The load balancer can become a single point of failure. If it fails, incoming traffic won't be properly distributed, affecting the availability of the website.
+Security Issues:
+Lack of firewall configuration leaves the infrastructure vulnerable to attacks. Additionally, the absence of HTTPS encryption exposes user data to potential interception.
+No Monitoring:
+Without monitoring tools in place, it's challenging to detect and address performance issues or failures promptly. This can lead to prolonged downtime and poor user experience.
