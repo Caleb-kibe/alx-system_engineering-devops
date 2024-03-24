@@ -1,0 +1,33 @@
+https://drive.google.com/file/d/1fBr96pOd5kOtMDZtXAeUZyDQlaRPcNEU/view?usp=sharing
+
+Specifics Explanation:
+
+Why Add Each Element:
+
+Firewalls: Protect servers from unauthorized access and filter incoming and outgoing traffic based on predefined security rules.
+
+SSL Certificate: Encrypts traffic between clients and the web server, ensuring data confidentiality and integrity.
+Monitoring Clients: Collect performance metrics, logs, and other relevant data to monitor the health and performance of the infrastructure.
+
+Traffic Served Over HTTPS:
+HTTPS encrypts data transmitted between the client and the server, preventing eavesdropping and tampering. This is crucial for securing sensitive information such as user credentials, payment details, etc.
+
+Purpose of Monitoring:
+Monitoring is used to track the health, performance, and security of the infrastructure in real-time. It helps detect and resolve issues promptly, optimize resource utilization, and ensure a seamless user experience.
+
+Data Collection by Monitoring Tool:
+The monitoring tool collects data from various sources such as system metrics (CPU usage, memory utilization), application logs, network traffic, and user interactions. This data is aggregated, analyzed, and presented in dashboards for monitoring and troubleshooting purposes.
+
+Monitoring Web Server QPS (Queries Per Second):
+To monitor the web server's QPS, you can configure the monitoring tool to collect metrics related to incoming HTTP requests and their response times. These metrics can include request count, request rate, latency, and error rates.
+
+Issues with this Infrastructure:
+
+Terminating SSL at the Load Balancer Level:
+Terminating SSL at the load balancer decrypts the traffic before forwarding it to backend servers. This means that the communication between the load balancer and backend servers is in plain text, potentially exposing sensitive data to interception.
+
+Single MySQL Server Accepting Writes:
+Having only one MySQL server capable of accepting write operations creates a single point of failure. If this server fails, write operations will be disrupted, affecting the availability and integrity of the data.
+
+Identical Servers with Same Components:
+Having servers with identical components increases the risk of widespread failures. For example, if there's a vulnerability in a specific component (e.g., Nginx), it can impact all servers simultaneously. Diversifying components across servers can mitigate this risk.
